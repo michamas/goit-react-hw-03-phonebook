@@ -30,8 +30,13 @@ export class App extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSearch = event => {
-    const { filter } = event.target;
+  handleFilter = event => {
+    const { contacts } = this.state;
+    const query = event.target.value;
+    let updatedContacts = [...contacts];
+    updatedContacts = updatedContacts.filter(contact => {
+      return contact.toLoweCase().indexOf(query.toLowerCase()) !== -1;
+    });
   };
 
   handleSubmit = event => {
@@ -103,7 +108,7 @@ export class App extends Component {
             id={searchID}
             type="text"
             value={filter}
-            onChange={this.handleSearch}
+            onChange={this.handleFilter}
             name="filter"
           />
         </label>
