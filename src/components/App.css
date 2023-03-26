@@ -1,0 +1,14 @@
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #010101;
+  background-color: gold;
+}
+
+.contacts {
+  margin: 0;
+  padding: 0;
+}
