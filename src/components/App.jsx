@@ -1,8 +1,6 @@
-import { nanoid } from 'nanoid';
 import { Component } from 'react';
 import './App.css';
 import Contacts from './Contacts/Contacts.jsx';
-import Filter from './Filter/Filter.jsx';
 import Form from './Form/Form.jsx';
 
 export class App extends Component {
