@@ -1,6 +1,6 @@
 const Contacts = ({ contacts }) => {
   return (
-    <ul>
+    <ul className="contacts">
       {contacts.map(({ id, name, number }) => (
         <li key={id}>
           {name}: {number}
