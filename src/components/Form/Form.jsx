@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import { Notify } from 'notiflix';
 
 const { Component } = require('react');
 
@@ -23,7 +24,7 @@ class Form extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { name, number } = this.state;
-    const { addContact } = this.props;
+    const { addContact, contacts } = this.props;
 
     //log whats been set by handleChange
     console.log(`Name: ${name}, number: ${number}`);
@@ -36,8 +37,22 @@ class Form extends Component {
 
     let isContactAlready = false;
 
+    contacts.forEach(contact => {
+      if (contact.name.toLowerCase() === newContact.name.toLowerCase()) {
+        Notify.info(`${newContact.name} is already in your phonebook.`);
+        // return;
+        isContactAlready = true;
+      }
+      // } else {
+      //   console.log('esle');
+      //   addContact(newContact);
+      // }
+    });
+
     if (!isContactAlready) {
       addContact(newContact);
+    } else {
+      Notify.info('This contact already exists.');
     }
 
     this.resetState();

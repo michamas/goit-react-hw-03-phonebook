@@ -1,14 +1,36 @@
 .app {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #010101;
-  background-color: gold;
 }
 
 .contacts {
   margin: 0;
   padding: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 5px;
+  border: 1px solid;
+  padding: 10px;
+  min-width: 300px;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.contacts li {
+  min-width: 300px;
+
+  display: flex;
+  justify-content: space-between;
 }

@@ -7,24 +7,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: gold;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  gap: 5px;
-  border: 1px solid;
-  padding: 10px;
-}
-
-label {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
 }
