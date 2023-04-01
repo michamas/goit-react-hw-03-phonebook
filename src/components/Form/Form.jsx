@@ -104,7 +104,7 @@ class Form extends Component {
 
 export default Form;
 
-Form.prototype = {
+Form.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,

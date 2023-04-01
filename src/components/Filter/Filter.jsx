@@ -20,7 +20,7 @@ export class Filter extends Component {
   }
 }
 
-Filter.prototype = {
+Filter.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

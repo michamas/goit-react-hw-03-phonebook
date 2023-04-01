@@ -15,7 +15,7 @@ const Contacts = ({ contacts, deleteContact }) => {
   );
 };
 
-Contacts.prototype = {
+Contacts.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
