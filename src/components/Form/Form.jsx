@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix';
-
+import PropTypes from 'prop-types';
 const { Component } = require('react');
 
 class Form extends Component {
@@ -103,3 +103,14 @@ class Form extends Component {
 }
 
 export default Form;
+
+Form.prototype = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  addContact: PropTypes.func,
+};
