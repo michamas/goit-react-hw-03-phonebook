@@ -6,15 +6,25 @@ import Form from './Form/Form.jsx';
 
 export class App extends Component {
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Geralt z Rivii', number: '459-12-56' },
-      { id: 'id-2', name: 'Clint Eastwood', number: '443-89-12' },
-      { id: 'id-3', name: 'Le Chiffre', number: '645-17-79' },
-      { id: 'id-4', name: 'Buzz Lightyear ', number: '227-91-26' },
-      { id: 'id-5', name: 'Merida Waleczna', number: '223-91-26' },
-    ],
+    contacts: [],
     filter: '',
   };
+
+  componentDidMount() {
+    const savedContacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(savedContacts);
+    if (parsedContacts) {
+      this.setState({
+        contacts: parsedContacts,
+      });
+    }
+  }
+
+  componentDidUpdate(prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
 
   addContact = newContact => {
     this.setState({
